@@ -1,0 +1,148 @@
+# GBFS / A* Search Visualizer (Pygame)
+
+A visual implementation of Greedy Best-First Search (GBFS) and A* pathfinding algorithms built using Python and Pygame.
+
+This project demonstrates how informed search algorithms explore a grid-based environment, how heuristics influence behavior, and how A* differs from GBFS in optimality and path cost calculation.
+
+---
+
+## Purpose
+
+I built this visualizer to better understand informed search algorithms beyond theory. Instead of just studying pseudocode, I wanted to:
+
+- Observe how nodes are expanded
+- See how heuristics guide the search
+- Compare GBFS and A* behavior
+- Analyze optimal vs non-optimal solutions
+
+The project focuses on clarity, correctness, and educational value.
+
+---
+
+## Algorithms Implemented
+
+### 1. Greedy Best-First Search (GBFS)
+
+- Uses only heuristic value
+- Priority function: f(n) = h(n)
+- Does not consider path cost
+- Faster in some cases
+- Does NOT guarantee optimal solution
+
+---
+
+### 2. A* Search
+
+- Combines path cost and heuristic
+- Priority function: f(n) = g(n) + h(n)
+- Guarantees optimal path if heuristic is admissible
+
+Where:
+- g(n) = cost from start to node
+- h(n) = heuristic estimate to goal
+
+---
+
+## Heuristics Used
+
+- Manhattan Distance
+- Euclidean Distance
+
+Both are admissible for 4-directional grid movement.
+
+---
+
+## Grid Configuration
+
+- Grid Size: 8 x 8
+- Movement: Up, Down, Left, Right
+- Predefined walls
+- Single start node
+- Single goal node
+
+Cell Types:
+- EMPTY
+- WALL
+- START
+- GOAL
+
+---
+
+## Visualization
+
+Color Legend:
+
+- Green  → Start
+- Red    → Goal
+- Dark Gray → Walls
+- Blue   → Visited nodes
+- Yellow → Frontier (open set)
+- Light Green → Final path
+
+The search runs step-by-step using a delay to clearly visualize progression.
+
+---
+
+## Performance Metrics
+
+After completion, the program provides:
+
+- Total nodes explored
+- Final path cost
+- Execution time (in milliseconds)
+
+This helps compare GBFS and A* performance.
+
+---
+
+## Installation
+
+1. Install Python 3.x
+2. Install Pygame:
+
+pip install pygame
+
+---
+
+## Run the Program
+
+python filename.py
+
+---
+
+## Implementation Details
+
+- Priority queue implemented using heapq
+- Search algorithms written as generator functions
+- Step-by-step visualization controlled via Pygame main loop
+- Separate heuristic functions
+- Structured grid and neighbor handling
+
+---
+
+## What I Learned
+
+- Practical differences between GBFS and A*
+- Importance of admissible heuristics
+- How priority queues manage open sets
+- Using generators for controlled animation
+- Visual debugging of search algorithms
+
+---
+
+## Possible Improvements
+
+- Interactive grid editing
+- Diagonal movement
+- Larger dynamic grids
+- Maze generation
+- Weighted A*
+- Performance comparison graphs
+
+---
+
+## Conclusion
+
+This project visually demonstrates how informed search algorithms behave in a constrained environment. A* balances optimality and efficiency, while GBFS prioritizes speed but may sacrifice path optimality.
+
+The main goal of this project was educational clarity and algorithm understanding.
